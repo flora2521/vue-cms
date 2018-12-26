@@ -25,5 +25,9 @@ npm run test
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 制作首页app
+```
+1.完成 Header 区域 使用 Mint-UI 中的 Header 组件
+2.制作底部的 Tabbar 区域 使用的的是 Mui 的 Tabbar
+3.要在 中间 放i个 router-vive 来 展示路由匹配到的组件
+```
