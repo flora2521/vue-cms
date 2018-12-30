@@ -38,7 +38,7 @@ export default {
       this.$http
         .post(
           "http://localhost:6060/postPam",
-          { name: "张三"},
+          { name: "张三" },
           { emulateJSON: true }
         )
         .then(

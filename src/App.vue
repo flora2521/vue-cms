@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app-container">
     <!-- 顶部 Header 区域  -->
-    <mt-header fixed title="蛇皮"></mt-header>
+    <mt-header fixed title="蛇皮" style="height: 60px;background-color: #fff;color: #515a6e;font-size: 20px"></mt-header>
 
 
 
@@ -25,6 +25,11 @@
       <router-link class="mui-tab-item" to="/search">
         <span class="mui-icon mui-icon-search"></span>
         <span class="mui-tab-label">搜索</span>
+      </router-link>
+
+       <router-link class="mui-tab-item" to="/Crossdomain">
+        <span class="mui-icon mui-icon-search"></span>
+        <span class="mui-tab-label">跨域</span>
       </router-link>
     </nav>
   </div>

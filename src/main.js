@@ -8,6 +8,11 @@ import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(Mint)
 
+//引入 iview
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
+Vue.use(iView);
+
 //导出 mui的样式
 
 import './lib/mui/css/mui.min.css'
