@@ -45,8 +45,8 @@ export default {
           function(res) {
             window.console.log(res.body);
           },
-          function(res) {
-            window.console.log(res.body);
+          function() {
+            window.console.log('error');
           }
         );
     }
