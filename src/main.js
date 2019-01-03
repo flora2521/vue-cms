@@ -26,6 +26,8 @@ import router from './router.js'
 import VueResource from 'vue-resource'
 //安装 vue-resource
 Vue.use(VueResource)
+//设置请求根路径
+Vue.http.options.root="http://localhost:6060"
 
 
 

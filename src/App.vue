@@ -1,13 +1,13 @@
 <template>
   <div id="app" class="app-container">
     <!-- 顶部 Header 区域  -->
-    <mt-header fixed title="蛇皮" style="height: 60px;background-color: #fff;color: #515a6e;font-size: 20px"></mt-header>
+    <mt-header fixed title="蛇皮" style="height: 60px;background-color: #409EFF;color: #515a6e;font-size: 20px;position: relative"></mt-header>
 
 
-
+<transition>
     <!-- 中间的 路由 router-view 区域 -->
     <router-view></router-view>
-
+      </transition>
     <!-- 底部 tabbar 区域 -->
     <nav class="mui-bar mui-bar-tab">
       <router-link class="mui-tab-item" to="/home">
@@ -49,8 +49,23 @@ export default {
 </style>
 
 <style scoped>
-.app-container {
-  padding-top: 40px;
-}
+    .app-container{
+        overflow-x: hidden;
+    }
+    .v-enter
+   {
+        opacity: 0;
+        transform: translateX(100%);
+        position: absolute;
+    }
+    .v-leave-to{
+        opacity: 0;
+        transform: translateX(-100%);
+        position: absolute;
+    }
+    .v-enter-active,
+    .v-leave-active {
+        transition: all 0.5s ease;
+    }
 </style>
 
