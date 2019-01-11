@@ -60,3 +60,11 @@ npm run lint
 2.创建新闻详细的组件页面 newsInfo
 3.在路由模块中讲新闻详情的路由地址和组件页面对应起来
 ```
+### 单独封装一个 comment.vue 评论子组件 
+```
+1.先创建一个单独的 comment.vue 组件模块
+2.在需要的 comment 组件的页面中 手动导入 comment 组件
+3.import comment from './comment.vue'
+4.在父组件中 使用 comment 属性 将刚才导入的 comment组件 注册为自己子组件
+5.在注册子组件的时候 注册名称 以标签形式 在页面引入即可
+``` 

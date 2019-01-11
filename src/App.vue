@@ -1,71 +1,79 @@
 <template>
-  <div id="app" class="app-container">
+  <div id="app" class="layout">
     <!-- 顶部 Header 区域  -->
-    <mt-header fixed title="蛇皮" style="height: 60px;background-color: #409EFF;color: #515a6e;font-size: 20px;position: relative"></mt-header>
-
-
-<transition>
-    <!-- 中间的 路由 router-view 区域 -->
-    <router-view></router-view>
-      </transition>
+    <div class="nav">
+      <AppHeader></AppHeader>
+    </div>
+    <div class="layout-content">
+      <Content :style="{padding: '0 50px'}">
+        <transition>
+          <router-view></router-view>
+        </transition>
+      </Content>
+    </div>
     <!-- 底部 tabbar 区域 -->
-    <nav class="mui-bar mui-bar-tab">
-      <router-link class="mui-tab-item" to="/home">
-        <span class="mui-icon mui-icon-home"></span>
-        <span class="mui-tab-label">首页</span>
-      </router-link>
-      <router-link class="mui-tab-item" to="/member">
-        <span class="mui-icon mui-icon-contact"></span>
-        <span class="mui-tab-label">会员</span>
-      </router-link>
-      <router-link class="mui-tab-item" to="/shopcar">
-        <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
-        <span class="mui-tab-label">购物车</span>
-      </router-link>
-      <router-link class="mui-tab-item" to="/search">
-        <span class="mui-icon mui-icon-search"></span>
-        <span class="mui-tab-label">搜索</span>
-      </router-link>
-
-       <router-link class="mui-tab-item" to="/Crossdomain">
-        <span class="mui-icon mui-icon-search"></span>
-        <span class="mui-tab-label">跨域</span>
-      </router-link>
-    </nav>
+    <AppFooter></AppFooter>
   </div>
 </template>
 
 <script>
+import AppHeader from "./components/Layout/AppHeader";
+import AppFooter from "./components/Layout/AppFooter";
+
 export default {
   name: "app",
   data() {
     return {};
   },
-  components: {}
+  components: {
+    AppHeader: AppHeader,
+    AppFooter: AppFooter
+  }
 };
 </script>
 
 <style>
+.layout {
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid #d7dde4;
+  background: #f5f7f9;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.layout-logo {
+  width: 80px;
+  height: 30px;
+  background: #5b6270;
+  border-radius: 3px;
+  float: left;
+  position: relative;
+  top: 15px;
+  left: 20px;
+}
+
+.layout-nav {
+  width: 450px;
+  margin: 0 auto;
+  margin-right: 20px;
+}
+
+.layout-footer-center {
+  text-align: center;
+}
+.layout-content {
+  margin-top: 62px;
+}
+.nav {
+  position: fixed; /*固定作用*/
+  top: 0px;
+  width: 60%;
+  z-index: 999;
+}
 </style>
 
 <style scoped>
-    .app-container{
-        overflow-x: hidden;
-    }
-    .v-enter
-   {
-        opacity: 0;
-        transform: translateX(100%);
-        position: absolute;
-    }
-    .v-leave-to{
-        opacity: 0;
-        transform: translateX(-100%);
-        position: absolute;
-    }
-    .v-enter-active,
-    .v-leave-active {
-        transition: all 0.5s ease;
-    }
 </style>
 

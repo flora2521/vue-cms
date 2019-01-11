@@ -15,12 +15,9 @@ Vue.use(iView);
 
 //导出 mui的样式
 
-import './lib/mui/css/mui.min.css'
-import './lib/mui/fonts/mui-icons-extra.ttf'
-import './lib/mui/css/icons-extra.css'
+
 //引入 路由组件
 import router from './router.js'
-
 
 //导入 vue-resource
 import VueResource from 'vue-resource'
