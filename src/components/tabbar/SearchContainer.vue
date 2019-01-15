@@ -1,50 +1,35 @@
 <template>
-    <Table :columns="columns1" :data="data1"></Table>
+    <Scroll :on-reach-bottom="handleReachEdge" height="650">
+        <Card dis-hover v-for="(item, index) in list3" :key="index" style="margin: 32px 0">
+            Content {{ item }}
+        </Card>
+    </Scroll>
 </template>
 <script>
     export default {
         data () {
             return {
-                columns1: [
-                    {
-                        title: 'Name',
-                        key: 'name'
-                    },
-                    {
-                        title: 'Age',
-                        key: 'age'
-                    },
-                    {
-                        title: 'Address',
-                        key: 'address'
-                    }
-                ],
-                data1: [
-                    {
-                        name: 'John Brown',
-                        age: 18,
-                        address: 'New York No. 1 Lake Park',
-                        date: '2016-10-03'
-                    },
-                    {
-                        name: 'Jim Green',
-                        age: 24,
-                        address: 'London No. 1 Lake Park',
-                        date: '2016-10-01'
-                    },
-                    {
-                        name: 'Joe Black',
-                        age: 30,
-                        address: 'Sydney No. 1 Lake Park',
-                        date: '2016-10-02'
-                    },
-                    {
-                        name: 'Jon Snow',
-                        age: 26,
-                        address: 'Ottawa No. 2 Lake Park',
-                        date: '2016-10-04'
-                    }
-                ]
+                list3: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            }
+        },
+        methods: {
+            handleReachEdge (dir) {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        if (dir > 0) {
+                            const first = this.list3[0];
+                            for (let i = 1; i < 11; i++) {
+                                this.list3.unshift(first - i);
+                            }
+                        } else {
+                            const last = this.list3[this.list3.length - 1];
+                            for (let i = 1; i < 11; i++) {
+                                this.list3.push(last + i);
+                            }
+                        }
+                        resolve("获取成功");
+                    }, 2000);
+                });
             }
         }
     }

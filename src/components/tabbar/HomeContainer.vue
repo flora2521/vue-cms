@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="card">
         <Carousel v-model="value1" loop autoplay >
             <CarouselItem v-for="(item,index) in imgList" :key="index">
                 <div class="CarouselItem">
@@ -8,8 +8,6 @@
             </CarouselItem>
 
         </Carousel>
-
-
     </div>
 </template>
 
@@ -50,6 +48,10 @@
     img {
         width: 100%;
         height: 100%;
+        border-radius: 12px;
+    }
+    .card {
+        margin: 20px 0px;
     }
 
 

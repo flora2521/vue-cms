@@ -4,10 +4,9 @@ import App from './App.vue'
 //引入路由模块
 import VueRouter from 'vue-router'
 //引入 Mint UI 库
-import Mint from 'mint-ui'
+import {Toast} from 'mint-ui'
 import 'mint-ui/lib/style.css'
-Vue.use(Mint)
-
+Vue.use(Toast)
 //引入 iview
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';

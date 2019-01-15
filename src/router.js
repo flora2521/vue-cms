@@ -10,7 +10,7 @@ import NewInfo from "./components/news/NewInfo";
 
 const router = new VueRouter({
     routes: [
-        {path: "/", redirect: "/home"},
+        {path: "/", redirect: "/home/newlist"},
         {path: "/home", component: HomeContainer},
         {path: "/member", component: MemberContainer},
         {path: "/shopcar", component: ShopcarContainer},
